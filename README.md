@@ -6,7 +6,7 @@
     Practice-Scale-AI
 </h3>
 <p align="center">
-    Хакатон Practice&amp;Scale AI от Акселератора Возможностей
+    Проект команды БЕЗУМЦЫ
 </p> 
 
 ---
