@@ -13,7 +13,7 @@ def main():
     parser.add_argument('--learn', action='store_true', help='Flag to enable learning mode')
     parser.add_argument('--targets', type=str, help='Path to the targets file, required if --learn is set')
     parser.add_argument('--dataset', type=str, required=True, help='Path to the dataset')
-    parser.add_argument('--classifier_model', default='rubert2_0863.pt', type=str, help='Path to the model')
+    parser.add_argument('--classifier_model', default='0.863_rubert2.pt', type=str, help='Path to the model')
     
     args = parser.parse_args()
 
