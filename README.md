@@ -14,8 +14,8 @@
 ---
 ### Инструкция 
 
-1. `git clone https://github.com/ItsHimReally/Practice-Scale-AI`
-2. Перейти в папку script_files и установить зависимости `cd script_files && pip install requirements.txt`
+1. `git clone https://github.com/ItsHimReally/InCallytics.git`
+2. Перейти в папку script_files и установить зависимости `cd InCallytics/script_files && pip install -r requirements.txt`
 3. Скачать веса модели rubert-2 ([ссылка](https://drive.google.com/file/d/1WEIKdmmZLRExeU8Mr2JjP-6HS6UBpY_x/view)), поместить в одну с директорию файлами script.py и models.py
 4. Запуск скрипта:
    Предсказание: 
