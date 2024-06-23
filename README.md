@@ -3,10 +3,10 @@
 </p>
 
 <h3 align="center">
-    Practice-Scale-AI
+    Команда БЕЗУМЦЫ
 </h3>
 <p align="center">
-    Проект команды БЕЗУМЦЫ
+    Хакатон Practice&amp;Scale AI от Акселератора Возможностей
 </p> 
 
 ---
