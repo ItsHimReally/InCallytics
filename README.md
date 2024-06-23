@@ -12,7 +12,7 @@
 ---
 ### Инструкция 
 
-Для работы используем модель [rubert-2](https://drive.google.com/file/d/1WEIKdmmZLRExeU8Mr2JjP-6HS6UBpY_x/view)
-
-```sh
-```
+1. `git clone something`
+2. Скачать веса модели rubert-2 ([ссылка](https://drive.google.com/file/d/1WEIKdmmZLRExeU8Mr2JjP-6HS6UBpY_x/view))
+3. 
+4.
