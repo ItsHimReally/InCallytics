@@ -7,14 +7,13 @@ import os
 
 from models import *
 
-
 def main():
     parser = argparse.ArgumentParser(description='Script for learning and processing dataset')
     
     parser.add_argument('--learn', action='store_true', help='Flag to enable learning mode')
     parser.add_argument('--targets', type=str, help='Path to the targets file, required if --learn is set')
     parser.add_argument('--dataset', type=str, required=True, help='Path to the dataset')
-    parser.add_argument('--bert_path', type=str, required=True, help='Path to the model')
+    parser.add_argument('--classifier_model', default='rubert2_0863.pt', type=str, help='Path to the model')
     
     args = parser.parse_args()
 
@@ -23,7 +22,7 @@ def main():
     
     learn_flag = args.learn
     data_dir = args.dataset
-    bert_path = args.bert_path
+    bert_path = args.classifier_model
     
     device = "cuda:0" if torch.cuda.is_available() else "cpu"
 
@@ -31,7 +30,7 @@ def main():
 
     model_id = "openai/whisper-large-v3"
 
-    print('\nУСТАНОВКА ВЕСОВ МОДЕЛИ WHISPER\n')
+    print('\nINSTALLING WEIGHTS OF THE WHISPER MODEL')
     model = AutoModelForSpeechSeq2Seq.from_pretrained(
         model_id, torch_dtype=torch_dtype, use_safetensors=True
     )
@@ -78,7 +77,7 @@ def main():
         data = pd.read_csv('targets.csv')
         texts, targets = data['text'], data['target']
 
-        classifier = CustomTextClassifier('cointegrated/rubert-tiny2', 'cointegrated/rubert-tiny2', n_classes=2, models_save_path='./models/')
+        classifier = CustomTextClassifier('cointegrated/rubert-tiny2', 'cointegrated/rubert-tiny2', n_classes=2, models_save_path='models/')
         classifier.init_helpers(texts, targets, lr, batch_size=4, train_val_test=[0.90, 0.1, 0], report_step=100)
 
         num_epochs = 15
@@ -88,7 +87,7 @@ def main():
 
         print('Training successful, models has been saved at ./models')
     else:
-        print('\nУСТАНОВКА ВЕСОВ МОДЕЛИ КЛАССИФИКАТОРА\n')
+        print('\nINSTALLING WEIGHTS OF THE CLASSIFIER MODEL\n')
         classifier = CustomTextClassifier('cointegrated/rubert-tiny2', 'cointegrated/rubert-tiny2', n_classes=2, models_save_path='./models/')
 
         classifier.model.classifier = torch.nn.Sequential(
@@ -123,7 +122,7 @@ def main():
         with open('result.txt', 'w') as f:
             f.write(ans_row.strip())
 
-        print(f'\nPREDICT WAS SUCCESSFUL, THE MODELS WERE SAVED AT {os.getcwd()}/result.txt')
+        print(f'\nPREDICT WAS SUCCESSFUL, THE result WERE SAVED AT {os.getcwd()}/result.txt')
     
 
 
