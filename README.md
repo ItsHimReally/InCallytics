@@ -14,10 +14,10 @@
 ---
 ## Инструкция по установке и использованию скрипта
 ### Клонировать проект
-`git clone https://github.com/ItsHimReally/InCallytics.git`
+- `git clone https://github.com/ItsHimReally/InCallytics.git`
 ### Установить зависимости
 Перейти в папку script_files и установить зависимости  
-`cd InCallytics/script_files && pip install -r requirements.txt`
+- `cd InCallytics/script_files && pip install -r requirements.txt`
 ### Установить модель
 Скачать веса модели rubert-2 ([ссылка](https://drive.google.com/file/d/1WEIKdmmZLRExeU8Mr2JjP-6HS6UBpY_x/view)), поместить в одну с директорию файлами `script.py` и `models.py`
 ### Запуск скрипта
